@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Translate that Phrase!</string>
+    <string name="app_name">Translate That!</string>
 
     <string name="action_settings">Settings</string>
     <string name="from">From:</string>
@@ -11,6 +11,30 @@
         <item>English</item>
         <item>Mandarin</item>
         <item>Spanish</item>
+    </string-array>
+
+    <string-array name="spanish_phrases">
+        <item>hola</item>
+        <item>cuánto?</item>
+        <item>por favor</item>
+        <item>gracias</item>
+        <item>adiós</item>
+    </string-array>
+
+    <string-array name="english_phrases">
+        <item>hello</item>
+        <item>how much?</item>
+        <item>please</item>
+        <item>thank you</item>
+        <item>goodbye</item>
+    </string-array>
+
+    <string-array name="chinese_phrases">
+        <item>你好</item>
+        <item>多少</item>
+        <item>请</item>
+        <item>谢谢</item>
+        <item>再见</item>
     </string-array>
 
 </resources>

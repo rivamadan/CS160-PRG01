@@ -2,12 +2,14 @@ package com.example.riva.translationapp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -21,13 +23,21 @@ public class Translate extends Activity {
 
         final Spinner from_lang_spinner = (Spinner) findViewById(R.id.from_lang);
         final Spinner to_lang_spinner = (Spinner) findViewById(R.id.to_lang);
+
+        ArrayAdapter<CharSequence> lang_adapter = ArrayAdapter.createFromResource(this,
+                R.array.language_choices, R.layout.spinner_layout);
+        lang_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        from_lang_spinner.setAdapter(lang_adapter);
+        to_lang_spinner.setAdapter(lang_adapter);
+
         final Spinner from_phrase_spinner = (Spinner) findViewById(R.id.from_phrase);
         final Spinner to_phrase_spinner = (Spinner) findViewById(R.id.to_phrase);
+
+        to_lang_spinner.setSelection(1);
 
         from_lang_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                System.out.println("hi");
                 String from_lang = (String) parent.getItemAtPosition(position);
                 int phrase_position = to_phrase_spinner.getSelectedItemPosition();
                 changeLang(from_lang, from_phrase_spinner, phrase_position);
@@ -77,45 +87,26 @@ public class Translate extends Activity {
         switch(lang)
         {
             case "English":
-                ArrayList<String> english_phrases = new ArrayList<String>();
-                english_phrases.add("hello");
-                english_phrases.add("how much?");
-                english_phrases.add("please");
-                english_phrases.add("thank you");
-                english_phrases.add("goodbye");
-
-                ArrayAdapter<String> english=new ArrayAdapter<String>(this,
-                        android.R.layout.simple_dropdown_item_1line,english_phrases);
-                spinner.setAdapter(english);
+                ArrayAdapter<CharSequence> english_adapter = ArrayAdapter.createFromResource(this,
+                        R.array.english_phrases, R.layout.spinner_layout);
+                english_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(english_adapter);
 
                 break;
 
             case "Spanish":
-                ArrayList<String> spanish_phrases = new ArrayList<String>();
-                spanish_phrases.add("hola");
-                spanish_phrases.add("cuánto?");
-                spanish_phrases.add("por favor");
-                spanish_phrases.add("gracias");
-                spanish_phrases.add("adiós");
-
-
-                ArrayAdapter<String> spanish=new ArrayAdapter<String>(this,
-                        android.R.layout.simple_dropdown_item_1line,spanish_phrases);
-                spinner.setAdapter(spanish);
+                ArrayAdapter<CharSequence> spanish_adapter = ArrayAdapter.createFromResource(this,
+                        R.array.spanish_phrases, R.layout.spinner_layout);
+                spanish_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(spanish_adapter);
 
                 break;
 
             case "Mandarin":
-                ArrayList<String> chinese_phrases = new ArrayList<String>();
-                chinese_phrases.add("??");
-                chinese_phrases.add("???");
-                chinese_phrases.add("?");
-                chinese_phrases.add("??");
-                chinese_phrases.add("??");
-
-                ArrayAdapter<String> chinese=new ArrayAdapter<String>(this,
-                        android.R.layout.simple_dropdown_item_1line,chinese_phrases);
-                spinner.setAdapter(chinese);
+                ArrayAdapter<CharSequence> chinese_adapter = ArrayAdapter.createFromResource(this,
+                        R.array.chinese_phrases, R.layout.spinner_layout);
+                chinese_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(chinese_adapter);
 
                 break;
         }
