@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Translate that Phrase!</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="from">From:</string>
+    <string name="to">To:</string>
+    <string name="phrase">Phrase:</string>
+    <string name="arrow">double arrow</string>
+
+    <string-array name="language_choices">
+        <item>English</item>
+        <item>Mandarin</item>
+        <item>Spanish</item>
+    </string-array>
+
+</resources>
