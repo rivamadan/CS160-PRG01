@@ -17,7 +17,7 @@
         android:text="@string/from"
         android:id="@+id/textView"
         android:textColor="#ff707070"
-        android:layout_gravity="left"
+        android:layout_gravity="start"
         android:layout_marginBottom="5dp" />
 
     <Spinner
@@ -27,7 +27,9 @@
         android:spinnerMode="dialog"
         android:background="@drawable/border"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,7 +38,7 @@
         android:text="@string/phrase"
         android:id="@+id/textView3"
         android:textColor="#ff707070"
-        android:layout_gravity="left"
+        android:layout_gravity="start"
         android:layout_marginBottom="5dp" />
 
     <Spinner
@@ -45,10 +47,12 @@
         android:id="@+id/from_phrase"
         android:spinnerMode="dialog"
         android:background="@drawable/border2"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
 
     <ImageView
-        android:layout_width="50dp"
+        android:layout_width="75dp"
         android:layout_height="50dp"
         android:id="@+id/arrow"
         android:src="@drawable/double_arrow_vert"
@@ -64,7 +68,7 @@
         android:text="@string/to"
         android:id="@+id/textView2"
         android:textColor="#ff707070"
-        android:layout_gravity="left"
+        android:layout_gravity="start"
         android:layout_marginBottom="5dp" />
 
     <Spinner
@@ -74,7 +78,9 @@
         android:spinnerMode="dialog"
         android:background="@drawable/border"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -83,7 +89,7 @@
         android:text="@string/phrase"
         android:id="@+id/textView4"
         android:textColor="#ff707070"
-        android:layout_gravity="left"
+        android:layout_gravity="start"
         android:layout_marginBottom="5dp" />
 
     <Spinner
@@ -92,7 +98,9 @@
         android:id="@+id/to_phrase"
         android:spinnerMode="dialog"
         android:background="@drawable/border2"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
 
 
 </LinearLayout>

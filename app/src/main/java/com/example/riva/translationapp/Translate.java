@@ -1,6 +1,7 @@
 package com.example.riva.translationapp;
 
 import android.app.Activity;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
@@ -24,8 +25,15 @@ public class Translate extends Activity {
         final Spinner from_lang_spinner = (Spinner) findViewById(R.id.from_lang);
         final Spinner to_lang_spinner = (Spinner) findViewById(R.id.to_lang);
 
+        int spinnerLayout;
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            spinnerLayout = R.layout.spinner_layout_land;
+        } else {
+            spinnerLayout =  R.layout.spinner_layout;
+        }
+
         ArrayAdapter<CharSequence> lang_adapter = ArrayAdapter.createFromResource(this,
-                R.array.language_choices, R.layout.spinner_layout);
+                R.array.language_choices, spinnerLayout);
         lang_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         from_lang_spinner.setAdapter(lang_adapter);
         to_lang_spinner.setAdapter(lang_adapter);
@@ -84,11 +92,18 @@ public class Translate extends Activity {
     }
 
     private void changeLang(String lang, Spinner spinner, int phrase_position){
+        int spinnerLayout;
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            spinnerLayout = R.layout.spinner_layout_land;
+        } else {
+            spinnerLayout =  R.layout.spinner_layout;
+        }
+
         switch(lang)
         {
             case "English":
                 ArrayAdapter<CharSequence> english_adapter = ArrayAdapter.createFromResource(this,
-                        R.array.english_phrases, R.layout.spinner_layout);
+                        R.array.english_phrases, spinnerLayout);
                 english_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner.setAdapter(english_adapter);
 
@@ -96,7 +111,7 @@ public class Translate extends Activity {
 
             case "Spanish":
                 ArrayAdapter<CharSequence> spanish_adapter = ArrayAdapter.createFromResource(this,
-                        R.array.spanish_phrases, R.layout.spinner_layout);
+                        R.array.spanish_phrases,spinnerLayout);
                 spanish_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner.setAdapter(spanish_adapter);
 
@@ -104,7 +119,7 @@ public class Translate extends Activity {
 
             case "Mandarin":
                 ArrayAdapter<CharSequence> chinese_adapter = ArrayAdapter.createFromResource(this,
-                        R.array.chinese_phrases, R.layout.spinner_layout);
+                        R.array.chinese_phrases, spinnerLayout);
                 chinese_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner.setAdapter(chinese_adapter);
 
